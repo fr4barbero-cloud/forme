@@ -23,42 +23,42 @@ button { font-size:40px; padding:10px 20px; }
 
 <tr>
 <td>TRIANGOLO</td>
-<td><button onclick="suona('s1')">♪</button><audio id="s1" src="triangolo(1).mp3"></audio></td>
+<td><button onclick="suona('s1')">♪</button><audio id="s1" src="triangolo(2).mp3"></audio></td>
 </tr>
 
 <tr>
 <td>CERCHIO</td>
-<td><button onclick="suona('s2')">♪</button><audio id="s2" src="cerchio(1).mp3"></audio></td>
+<td><button onclick="suona('s2')">♪</button><audio id="s2" src="cerchio(2).mp3"></audio></td>
 </tr>
 
 <tr>
 <td>RAGGI</td>
-<td><button onclick="suona('s3')">♪</button><audio id="s3" src="raggi(1).mp3"></audio></td>
+<td><button onclick="suona('s3')">♪</button><audio id="s3" src="raggi(2).mp3"></audio></td>
 </tr>
 
 <tr>
 <td>LINEA A ZIG ZAG</td>
-<td><button onclick="suona('s4')">♪</button><audio id="s4" src="linea frastagliata(2).mp3"></audio></td>
+<td><button onclick="suona('s4')">♪</button><audio id="s4" src="linea frastagliata(3).mp3"></audio></td>
 </tr>
 
 <tr>
 <td>LINEA ONDULATA</td>
-<td><button onclick="suona('s5')">♪</button><audio id="s5" src="linea ondulata(2).mp3"></audio></td>
+<td><button onclick="suona('s5')">♪</button><audio id="s5" src="linea ondulata(3).mp3"></audio></td>
 </tr>
 
 <tr>
 <td>LINEA SPEZZATA</td>
-<td><button onclick="suona('s6')">♪</button><audio id="s6" src="linea spezzata(2).mp3"></audio></td>
+<td><button onclick="suona('s6')">♪</button><audio id="s6" src="linea spezzata(3).mp3"></audio></td>
 </tr>
 
 <tr>
 <td>LINEA AGGROVIGLIATA</td>
-<td><button onclick="suona('s7')">♪</button><audio id="s7" src="linea aggrovigliata(2).mp3"></audio></td>
+<td><button onclick="suona('s7')">♪</button><audio id="s7" src="linea aggrovigliata(3).mp3"></audio></td>
 </tr>
 
 <tr>
 <td>LINEA A SPIRALE</td>
-<td><button onclick="suona('s8')">♪</button><audio id="s8" src="linea a spirale(2).mp3"></audio></td>
+<td><button onclick="suona('s8')">♪</button><audio id="s8" src="linea a spirale(3).mp3"></audio></td>
 </tr>
 
 </table>
@@ -67,7 +67,9 @@ button { font-size:40px; padding:10px 20px; }
 function suona(id){
   const audio = document.getElementById(id);
   audio.currentTime = 0;
-  audio.play();
+  audio.play().catch(function(){
+    alert("Il file audio non è stato trovato. Controlla che l'HTML e gli MP3 siano nella stessa cartella e che il nome del file sia identico.");
+  });
 }
 </script>
 
